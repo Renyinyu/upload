@@ -1,0 +1,132 @@
+:root {
+  --common-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.upload-wrapper.select > .init-status,
+.upload-wrapper.upload > .uploading,
+.upload-wrapper.result > .preview {
+  display: flex;
+}
+.upload-wrapper.select > .uploading,
+.upload-wrapper.select > .preview,
+.upload-wrapper.upload > .init-status,
+.upload-wrapper.upload > .preview,
+.upload-wrapper.result > .uploading,
+.upload-wrapper.result > .init-status {
+  display: none;
+  pointer-events: none;
+}
+
+.upload-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  margin: 100px auto;
+  border-radius: var(--common-radius);
+  overflow: hidden;
+}
+
+.upload-wrapper .avatar-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.upload-wrapper .init-status {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #ccc;
+  transition: all 0.2s;
+  border-radius: var(--common-radius);
+  background: #fff;
+}
+
+.upload-wrapper .init-status:hover {
+  border-color: cornflowerblue;
+  color: cornflowerblue;
+}
+
+.upload-wrapper .uploading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.upload-text {
+  color: #fff;
+  font-size: 14px;
+}
+
+.progress-wrapper {
+  position: relative;
+  width: 100px;
+  height: 14px;
+  background: grey;
+  border-radius: var(--common-radius);
+  margin-top: 4px;
+}
+
+.progress-wrapper .count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #fff;
+}
+
+.progress-wrapper .count .progress-count {
+  display: inline-block;
+}
+
+.progress-wrapper .count .progress-count::after {
+  display: inline-block;
+  counter-reset: progress var(--percent);
+  content: counter(progress) "%";
+}
+
+.progress-wrapper .progress {
+  display: flex;
+  justify-content: center;
+  width: calc(var(--percent) * 1%);
+  height: 14px;
+  background: cornflowerblue;
+  border-radius: var(--common-radius);
+  font-size: 12px;
+  color: #fff;
+}
+
+.upload-wrapper .preview {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: var(--common-radius);
+  border: 1px dashed #ccc;
+}
+
+.upload-wrapper .preview img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: var(--common-radius);
+}

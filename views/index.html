@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>upload</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h2>二进制文件上传</h2>
+    <div class="upload-wrapper select">
+      <!-- input 默认支持拖拽文件上传 -->
+      <input class="avatar-input" id="avatarInput" type="file" />
+      <div class="init-status">+</div>
+
+      <div class="uploading">
+        <p class="upload-text">上传中...</p>
+        <div class="progress-wrapper" style="--percent: 0">
+          <div class="progress"></div>
+          <div class="count">
+            <span class="progress-count"></span>
+          </div>
+        </div>
+        <button class="cancel-upload" type="button">取消</button>
+      </div>
+      <div class="preview">
+        <img alt="" />
+      </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>
