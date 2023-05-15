@@ -30,6 +30,10 @@ app.get("/upload/base64", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/upload-base64.html"));
 });
 
+app.get("/upload/crop", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/upload-crop.html"));
+});
+
 app.post("/upload", upload.single("avatar"), (req, res) => {
   res.send({
     msg: "ok",

@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.preview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  width: 300px;
+  height: 300px;
+  border: 1px dashed grey;
+  margin: 30px;
+}
+
+.preview .crop-block {
+  position: absolute;
+  left: 150px;
+  top:55px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+}
+
+.preview img {
+  max-height: 300px;
+  max-width: 300px;
+}
