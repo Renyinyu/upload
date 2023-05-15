@@ -51,5 +51,17 @@ generateCrop.addEventListener("click", function () {
     data.height
   );
 
+  canvas.toBlob((blob) => {
+    const file = new File([blob], `${Date.now()}.jpg`);
+    console.log(file, `${Date.now()}.jpg`);
+    const formData = new FormData();
+    formData.append("avatar", file);
+    axios({
+      url: "/upload",
+      method: "post",
+      data: formData,
+    });
+  });
+
   document.body.appendChild(canvas);
 });
